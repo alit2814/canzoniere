@@ -139,7 +139,7 @@
   </section>
 
   <script>
-    // Dati JSON direttamente nello script
+    // Dati dei canti direttamente nello script
     const listaCanti = [
       { 
         "titolo": "Lode al Signore", 
@@ -168,27 +168,29 @@
       showSection('all');
     }
 
-    // Carica i canti nella pagina
-    const listaTutti = document.getElementById('lista-tutti');
+    // Popola le liste
+    window.onload = () => {
+      const listaTutti = document.getElementById('lista-tutti');
 
-    listaCanti.forEach(canto => {
-      // Aggiungi a "Tutti i canti"
-      const div = document.createElement('div');
-      div.className = 'song';
-      div.textContent = canto.titolo;
-      div.onclick = () => mostraCanto(canto);
-      listaTutti.appendChild(div);
+      listaCanti.forEach(canto => {
+        // Aggiungi a "Tutti i canti"
+        const div = document.createElement('div');
+        div.className = 'song';
+        div.textContent = canto.titolo;
+        div.onclick = () => mostraCanto(canto);
+        listaTutti.appendChild(div);
 
-      // Aggiungi anche nella categoria giusta
-      const catDiv = document.getElementById(canto.categoria);
-      if (catDiv) {
-        const divCat = document.createElement('div');
-        divCat.className = 'song';
-        divCat.textContent = canto.titolo;
-        divCat.onclick = () => mostraCanto(canto);
-        catDiv.appendChild(divCat);
-      }
-    });
+        // Aggiungi anche nella categoria giusta
+        const catDiv = document.getElementById(canto.categoria);
+        if (catDiv) {
+          const divCat = document.createElement('div');
+          divCat.className = 'song';
+          divCat.textContent = canto.titolo;
+          divCat.onclick = () => mostraCanto(canto);
+          catDiv.appendChild(divCat);
+        }
+      });
+    };
   </script>
 </body>
 </html>
