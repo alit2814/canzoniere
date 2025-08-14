@@ -92,13 +92,7 @@
     }
   </style>
 </head>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js')
-    .then(() => console.log("Service Worker registrato!"))
-    .catch(err => console.error("Errore Service Worker:", err));
-}
-</script>
+
 <body>
   <header>
     <h1>Canzoniere Camposcuola</h1>
@@ -222,6 +216,15 @@ if ('serviceWorker' in navigator) {
       });
     };
   </script>
+
+  <script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./service-worker.js')
+        .then(() => console.log("Service Worker registrato"))
+        .catch(err => console.error("Errore SW:", err));
+}
+</script>
 </body>
 </html>
+
 
