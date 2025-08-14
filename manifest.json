@@ -1,1 +1,9 @@
+{
+  "name": "Canzoniere Camposcuola",
+  "short_name": "Canzoniere",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50"
+}
 
